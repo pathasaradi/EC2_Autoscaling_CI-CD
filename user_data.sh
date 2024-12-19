@@ -1,11 +1,10 @@
 #! /bin/bash
-sudo yum update -y
-sudo yum install httpd -y
-sudo yum install git -y
-sudo systemctl start httpd
-sudo systemctl enable httpd
-sudo yum install -y ruby
-sudo yum install -y wget
+sudo yum update
+sudo yum upgrade -y
+sudo yum install nginx -y
+sudo yum update
+sudo yum install ruby-full -y
+sudo yum install wget
 cd /home/ec2-user
 wget https://aws-codedeploy-us-west-2.s3.us-west-2.amazonaws.com/latest/install
 chmod +x ./install
