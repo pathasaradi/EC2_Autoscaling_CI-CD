@@ -1,1 +1,3 @@
-rm /var/www/html/index.html
+#!/bin/bash
+# Stop NGINX service before deployment
+sudo systemctl stop nginx
