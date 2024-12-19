@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+
+echo "Running BeforeInstall script: clean_directory.sh"
 
 # Remove the existing index.html file if it exists
 if [ -f /var/www/html/index.html ]; then
