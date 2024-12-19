@@ -1,14 +1,11 @@
 version: 0.0
 os: linux
 files:
-  - source: index.html    # Ensure the path is correct relative to the root of your deployment package
-    destination: /var/www/html/  # Destination directory for your web server (e.g., Apache or Nginx)
-    file_exists_behavior: OVERWRITE   # Overwrite existing files if any
-BeforeInstall:
-  - location: before_script.sh  # Ensure the script path is correct relative to the root of your package
-    timeout: 300
-    runas: root
-ApplicationStop:
-  - location: after_script.sh  # Ensure the script path is correct relative to the root of your package
-    timeout: 300
-    runas: root
+  - source: index.html
+    destination: /var/www/html/
+    file_exists_behavior: OVERWRITE
+hooks:
+  BeforeInstall:
+    - location: scripts/clean_directory.sh # Correct path to the script
+      timeout: 300
+      runas: root
