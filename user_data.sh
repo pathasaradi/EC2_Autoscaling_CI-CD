@@ -1,12 +1,11 @@
 #!/bin/bash
-sudo su
-apt update
-apt upgrade -y
-apt install nginx -y
-sudo apt update
-sudo apt install ruby-full -y
-sudo apt install wget
-cd /home/ubuntu
+sudo yum update
+sudo yum upgrade -y
+sudo yum install nginx -y
+sudo yum update
+sudo yum install ruby-full -y
+sudo yum install wget
+cd /home/ec2-user
 wget https://aws-codedeploy-ap-south-1.s3.ap-south-1.amazonaws.com/latest/install
 chmod +x ./install
 sudo ./install auto
