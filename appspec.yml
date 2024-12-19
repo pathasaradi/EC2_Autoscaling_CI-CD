@@ -6,6 +6,6 @@ files:
     file_exists_behavior: OVERWRITE
 hooks:
   BeforeInstall:
-    - location: scripts/clean_directory.sh # Correct path to the script
+    - location: scripts/clean_directory.sh
       timeout: 300
       runas: root
