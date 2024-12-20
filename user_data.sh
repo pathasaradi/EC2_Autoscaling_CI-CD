@@ -1,15 +1,12 @@
-#! /bin/bash
-sudo yum update -y
-sudo yum upgrade -y
-sudo amazon-linux-extras enable nginx1
-sudo yum install nginx -y
-sudo yum install ruby -y
-sudo yum install wget -y
-sudo systemctl start nginx
-sudo systemctl enable nginx
+User Data for Dependencies installations for AMAZON Linux 2:-
+
+#!/bin/bash
+sudo yum -y update
+sudo yum -y install ruby
+sudo yum -y install wget
 cd /home/ec2-user
-wget https://aws-codedeploy-us-west-2.s3.us-west-2.amazonaws.com/latest/install
-chmod +x ./install
+wget https://aws-codedeploy-ap-south-1.s3.ap-south-1.amazonaws.com/latest/install
+sudo chmod +x ./install
 sudo ./install auto
-sudo yum install -y aws-codedeploy-agent
-sudo service codedeploy-agent start
+sudo yum install -y python-pip
+sudo pip install awscli
